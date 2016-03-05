@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2012 ELECTION RESULTS"
+        android:fontFamily="sans-serif-bold"
+        android:textColor="#5d5d5d"
+        android:id="@+id/electiontitle"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OBAMA"
+        android:textColor="#5d5d5d"
+        android:id="@+id/obama"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/electiontitle"
+        android:layout_alignStart="@+id/electiontitle" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ROMNEY"
+        android:textColor="#5d5d5d"
+        android:id="@+id/romney"
+        android:layout_alignTop="@+id/obama"
+        android:layout_alignEnd="@+id/electiontitle" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9%"
+        android:gravity="center"
+        android:textColor="#5d5d5d"
+        android:id="@+id/obamaresults"
+        android:layout_alignTop="@+id/romneyresults"
+        android:layout_alignStart="@+id/obama"
+        android:layout_alignEnd="@+id/obama" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="91%"
+        android:gravity="center"
+        android:textColor="#5d5d5d"
+        android:id="@+id/romneyresults"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/romney"
+        android:layout_alignEnd="@+id/romney" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#5d5d5d"
+        android:text="Warren County of Des Moines, IA"
+        android:gravity="center"
+        android:id="@+id/county"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/obamaresults"
+        android:layout_alignStart="@+id/obama"
+        android:layout_alignEnd="@+id/romney" />
+</RelativeLayout>
