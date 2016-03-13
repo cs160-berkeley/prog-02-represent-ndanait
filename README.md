@@ -1,6 +1,6 @@
 # PROG 02: Represent!
 
-Briefly describe your app here.
+Caucus, Primary, Debate, Delegates, Issues! How can we find the signal in all the noise and hype as we approach the 2016 US Presidential Election? Represent is an application in which, given a user’s location, voters are provided with groundbreaking facts regarding their respective senators and representatives.
 
 ## Authors
 
@@ -8,7 +8,7 @@ Neil Danait ([neil.danait@berkeley@berkeley.edu](mailto:neil.danait@@berkeley.ed
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [CS160 Proj2C: Represent Final] (https://www.youtube.com/watch?v=-c1odms17zQ)
 
 ## Acknowledgments
 
