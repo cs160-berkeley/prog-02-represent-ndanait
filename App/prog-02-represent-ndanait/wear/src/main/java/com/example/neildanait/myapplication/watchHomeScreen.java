@@ -9,6 +9,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 
+import java.util.Random;
+
 public class watchHomeScreen extends Activity {
     //StackOverFlowCredits
     private SensorManager mSensorManager;
@@ -26,10 +28,12 @@ public class watchHomeScreen extends Activity {
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
             if (mAccel > 12) {
-                int rand = (int) Math.ceil(Math.random() * 100);
-                String toPass = Integer.toString(rand);
+                Random generator = new Random();
+                int rand = generator.nextInt(4);
+                String[] toPassString = new String[]{"Warren County", "Collin County", "Denton County", "Collier County", "Bedford County"};
+                String toPass = toPassString[rand];
                 Intent transition = new Intent(watchHomeScreen.this, watchElection.class);
-                transition.putExtra("ZIP_CODE", toPass);
+                transition.putExtra("RANDOM", toPass);
                 startActivity(transition);
             }
         }

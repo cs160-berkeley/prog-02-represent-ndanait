@@ -15,13 +15,17 @@ public class WatchListenerService extends WearableListenerService {
 
         String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
 
-        String[] tempArray = value.split("\n");
-        String zipCodeEntry = tempArray[1];
+        String[] tempArray = value.split("!!!");
+        String candidateName = tempArray[0];
+        String candidateParty = tempArray[1];
+        String candidatePostalCode = tempArray[2];
+        String candidateCounty = tempArray[3];
         Intent intent = new Intent(this, watchCandidateFirst.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra("CANDIDATE_NAME", "John Doe");
-        intent.putExtra("PARTY_NAME", "Democrat");
-        intent.putExtra("ZIP_CODE", zipCodeEntry);
+        intent.putExtra("CANDIDATE_NAME", candidateName);
+        intent.putExtra("PARTY_NAME", candidateParty);
+        intent.putExtra("POSTAL_CODE", candidatePostalCode);
+        intent.putExtra("COUNTY_NAME", candidateCounty);
         startActivity(intent);
         super.onMessageReceived(messageEvent);
     }

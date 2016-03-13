@@ -2,62 +2,89 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@android:color/white">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dip"
-        android:background="@android:color/white"
-        android:id="@+id/linearLayout"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="375dp"
-            android:layout_height="50dp"
-            android:fontFamily="sans-serif-regular"
-            android:textSize="18pt"
-            android:textAlignment="center"
-            android:text="John Doe"
-            android:id="@+id/detailedCandidateName"
-            android:layout_marginTop="10dip"
-            android:layout_centerHorizontal="true"
-            android:textColor="#00B8FF"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:layout_width="175dp"
-            android:layout_height="175dp"
-            android:id="@+id/detailedCandidatePicture"
-            android:src="@drawable/senator1"
-            android:layout_marginTop="10dip"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="30dp"
-            android:fontFamily="sans-serif"
-            android:textSize="11pt"
-            android:textAlignment="center"
-            android:id="@+id/detailedCandidateEndTerm"
-            android:text="Term Ends: 02/15/18 "
-            android:layout_marginTop="10dip"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"/>
-
-        <ImageView
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/tempbills"
-            android:src="@drawable/tempbills"
-            android:layout_marginTop="10dip" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip"
+            android:background="@android:color/white"
+            android:id="@+id/linearLayout"
+            android:weightSum="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true">
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+            <TextView
+                android:layout_width="375dp"
+                android:layout_height="60dp"
+                android:fontFamily="Arial"
+                android:textSize="20pt"
+                android:textAlignment="center"
+                android:id="@+id/detailedCandidateName"
+                android:layout_marginTop="10dip"
+                android:layout_centerHorizontal="true"
+                android:textColor="#00B8FF"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:id="@+id/detailedCandidatePicture"
+                android:layout_marginTop="10dip"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:fontFamily="sans-serif-regular"
+                android:textSize="8pt"
+                android:textAlignment="center"
+                android:id="@+id/detailedCandidateEndTerm"
+                android:layout_marginTop="10dip"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Committees"
+                android:textSize="8pt"
+                android:textStyle="italic"
+                android:textColor="@android:color/black"
+                android:textAlignment="center"
+                android:id="@+id/committeesTitle"
+                android:layout_marginTop="10dip"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/committees"
+                android:background="@drawable/border_ui"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Bills"
+                android:textSize="8pt"
+                android:textStyle="italic"
+                android:textColor="@android:color/black"
+                android:textAlignment="center"
+                android:id="@+id/billsTitle"
+                android:layout_marginTop="10dip"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/bills"
+                android:background="@drawable/border_ui"/>
+            </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

@@ -12,6 +12,7 @@ import com.google.android.gms.wearable.Wearable;
 public class PhoneToWatchService extends Service {
 
     private GoogleApiClient mApiClient;
+    public Bundle extras;
 
     @Override
     public void onCreate() {
@@ -41,26 +42,33 @@ public class PhoneToWatchService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Which cat do we want to feed? Grab this info from INTENT
         // which was passed over when we called startService
-        Bundle extras = intent.getExtras();
+        if (intent != null) {
+            extras = intent.getExtras();
 
-        final String candidateName = extras.getString("CANDIDATE_NAME");
-        final String zipCodeValue = extras.getString("ZIP_CODE");
-        final StringBuilder fullMessage = new StringBuilder();
-        fullMessage.append(candidateName);
-        fullMessage.append("\n");
-        fullMessage.append(zipCodeValue);
-        final String finalMessage = fullMessage.toString();
-        // Send the message with the candidate name
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //first, connect to the apiclient
-                mApiClient.connect();
-                //now that you're connected, send a message with the cat name
-                sendMessage("/" + finalMessage, finalMessage);
-            }
-        }).start();
-
+            final String candidateName = extras.getString("CANDIDATE_NAME");
+            final String candidateParty = extras.getString("PARTY_NAME");
+            final String candidatePostalCode = extras.getString("POSTAL_CODE");
+            final String candidateCounty = extras.getString("COUNTY_NAME");
+            final StringBuilder fullMessage = new StringBuilder();
+            fullMessage.append(candidateName);
+            fullMessage.append("!!!");
+            fullMessage.append(candidateParty);
+            fullMessage.append("!!!");
+            fullMessage.append(candidatePostalCode);
+            fullMessage.append("!!!");
+            fullMessage.append(candidateCounty);
+            final String finalMessage = fullMessage.toString();
+            // Send the message with the candidate name
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //first, connect to the apiclient
+                    mApiClient.connect();
+                    //now that you're connected, send a message with the cat name
+                    sendMessage("/" + finalMessage, finalMessage);
+                }
+            }).start();
+        }
         return START_STICKY;
     }
 

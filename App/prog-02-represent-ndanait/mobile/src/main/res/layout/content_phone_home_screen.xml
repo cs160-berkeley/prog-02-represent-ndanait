@@ -71,4 +71,12 @@
         android:id="@+id/titleImage"
         android:src="@drawable/represent"
         android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/appDescription"
+        android:src="@drawable/appdescription"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/titleImage"
+        android:layout_alignStart="@+id/titleImage" />
 </RelativeLayout>

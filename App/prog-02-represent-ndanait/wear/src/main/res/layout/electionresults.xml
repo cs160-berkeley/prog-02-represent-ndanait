@@ -35,7 +35,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9%"
         android:gravity="center"
         android:textColor="#5d5d5d"
         android:id="@+id/obamaresults"
@@ -45,7 +44,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="91%"
         android:gravity="center"
         android:textColor="#5d5d5d"
         android:id="@+id/romneyresults"
@@ -56,7 +54,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
-        android:text="Warren County of Des Moines, IA"
         android:gravity="center"
         android:id="@+id/county"
         android:layout_marginTop="19dp"

@@ -6,15 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:deviceIds="wear"
-    android:background="@android:color/white">
+    android:background="@drawable/americanflagbackground">
     <TextView
         android:id="@+id/candidateInfo"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Home"
-        android:textColor="#5d5d5d"
+        android:layout_height="50dp"
+        android:text="Represent"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-light"
         android:gravity="center"
         app:layout_box="all"
-        android:layout_above="@+id/detailedView"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
